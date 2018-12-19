@@ -1,9 +1,9 @@
-import { BillingAgreementFactory } from '../../libs/setup/BillingAgreementFactory';
+import { SetupBillingAgreementFactory } from '../../libs/setup/BillingAgreementFactory';
 
-describe('Setup/BillingAgreementFactory', () => {
-  let SellerOrderAttributesBuilder = BillingAgreementFactory.init()
+describe('Setup/SetupBillingAgreementFactory', () => {
+  let SellerOrderAttributesBuilder = SetupBillingAgreementFactory.init()
   beforeEach(() => {
-    SellerOrderAttributesBuilder = BillingAgreementFactory.init()
+    SellerOrderAttributesBuilder = SetupBillingAgreementFactory.init()
   })
   test('get Default value', () => {
     expect(SellerOrderAttributesBuilder.getAttributes())

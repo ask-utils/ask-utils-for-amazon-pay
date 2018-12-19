@@ -1,30 +1,30 @@
 
 import { interfaces } from 'ask-sdk-model';
 import SellerOrderAttributes = interfaces.amazonpay.model.request.SellerOrderAttributes;
-import { SellerOrderAttributesBuilder } from './SellerOrderAttributesBuilder'
+import { ChargeSellerOrderAttributesBuilder } from './SellerOrderAttributesBuilder'
 import { defaultSellerOrderAttributes } from './defaultAttributes'
 
-export class SellerOrderAttributesFactory {
-    public static init(): SellerOrderAttributesBuilder {
+export class ChargeSellerOrderAttributesFactory {
+    public static init(): ChargeSellerOrderAttributesBuilder {
         const attributes: SellerOrderAttributes  = JSON.parse(JSON.stringify(defaultSellerOrderAttributes))
         return {
-            setSellerOrderId(orderId: string): SellerOrderAttributesBuilder {
+            setSellerOrderId(orderId: string): ChargeSellerOrderAttributesBuilder {
                 attributes.sellerOrderId = orderId
                 return this
             },
-            setStoreName(storeName: string): SellerOrderAttributesBuilder {
+            setStoreName(storeName: string): ChargeSellerOrderAttributesBuilder {
                 attributes.storeName = storeName
                 return this
             },
-            setCustomInformation(information: string): SellerOrderAttributesBuilder {
+            setCustomInformation(information: string): ChargeSellerOrderAttributesBuilder {
                 attributes.customInformation = information
                 return this
             },
-            sellerNote(note: string): SellerOrderAttributesBuilder {
+            sellerNote(note: string): ChargeSellerOrderAttributesBuilder {
                 attributes.sellerNote = note
                 return this
             },
-            updateVersion(version: string): SellerOrderAttributesBuilder {
+            updateVersion(version: string): ChargeSellerOrderAttributesBuilder {
                 attributes['@version'] = version
                 return this
             },

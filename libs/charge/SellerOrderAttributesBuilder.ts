@@ -1,10 +1,10 @@
 import { interfaces } from 'ask-sdk-model';
 import SellerOrderAttributes = interfaces.amazonpay.model.request.SellerOrderAttributes;
-export interface SellerOrderAttributesBuilder {
-    setSellerOrderId(orderId: string): SellerOrderAttributesBuilder
-    setStoreName(storeName: string): SellerOrderAttributesBuilder
-    setCustomInformation(information: string): SellerOrderAttributesBuilder
-    sellerNote(note: string): SellerOrderAttributesBuilder
-    updateVersion(version: string): SellerOrderAttributesBuilder
+export interface ChargeSellerOrderAttributesBuilder {
+    setSellerOrderId(orderId: string): ChargeSellerOrderAttributesBuilder
+    setStoreName(storeName: string): ChargeSellerOrderAttributesBuilder
+    setCustomInformation(information: string): ChargeSellerOrderAttributesBuilder
+    sellerNote(note: string): ChargeSellerOrderAttributesBuilder
+    updateVersion(version: string): ChargeSellerOrderAttributesBuilder
     getAttributes(): SellerOrderAttributes
 }

@@ -1,9 +1,9 @@
-import { AuthorizeAttributesFactory } from '../../libs/charge/AuthorizeAttributesFactory';
+import { ChargeAuthorizeAttributesFactory } from '../../libs/charge/AuthorizeAttributesFactory';
 
-describe('Charge/AuthorizeAttributesFactory', () => {
-    let AuthorizeAttributesBuilder = AuthorizeAttributesFactory.init()
+describe('Charge/ChargeAuthorizeAttributesFactory', () => {
+    let AuthorizeAttributesBuilder = ChargeAuthorizeAttributesFactory.init()
     beforeEach(() => {
-        AuthorizeAttributesBuilder = AuthorizeAttributesFactory.init()
+        AuthorizeAttributesBuilder = ChargeAuthorizeAttributesFactory.init()
     })
     describe('#getAuthorizationAmount()', () => {
         test('Should get authorizationAmount object', () => {

@@ -2,38 +2,38 @@ import { interfaces } from 'ask-sdk-model';
 import ChargeAmazonPayRequest = interfaces.amazonpay.request.ChargeAmazonPayRequest;
 import PaymentAction = interfaces.amazonpay.model.request.PaymentAction;
 
-import { AuthorizeAttributesBuilder } from './AuthorizeAttributesBuilder'
+import { ChargeAuthorizeAttributesBuilder } from './AuthorizeAttributesBuilder'
 
-import { PayloadBuilder } from './PayloadBuilder'
+import { ChargePayloadBuilder } from './PayloadBuilder'
 import { defaultPayload } from './defaultAttributes'
-import { SellerOrderAttributesBuilder } from './SellerOrderAttributesBuilder'
+import { ChargeSellerOrderAttributesBuilder } from './SellerOrderAttributesBuilder'
 
 
-export class PayloadFactory {
-    public static init(): PayloadBuilder {
+export class ChargePayloadFactory {
+    public static init(): ChargePayloadBuilder {
         const payload: ChargeAmazonPayRequest = JSON.parse(JSON.stringify(defaultPayload))
         return {
-            updateVersion(version: number): PayloadBuilder {
+            updateVersion(version: number): ChargePayloadBuilder {
                 payload["@version"] = String(version)
                 return this
             },
-            setSellerId(sellerId: string): PayloadBuilder {
+            setSellerId(sellerId: string): ChargePayloadBuilder {
                 payload.sellerId = sellerId
                 return this
             },
-            setBillingAgreementId(billingAgreementId: string): PayloadBuilder {
+            setBillingAgreementId(billingAgreementId: string): ChargePayloadBuilder {
                 payload.billingAgreementId = billingAgreementId
                 return this
             },
-            updatePaymentAction(action: PaymentAction): PayloadBuilder {
+            updatePaymentAction(action: PaymentAction): ChargePayloadBuilder {
                 payload.paymentAction = action
                 return this
             },
-            updateAuthorizeAttributes(attributes: AuthorizeAttributesBuilder ): PayloadBuilder {
+            updateAuthorizeAttributes(attributes: ChargeAuthorizeAttributesBuilder ): ChargePayloadBuilder {
                 payload.authorizeAttributes = attributes.getAttributes()
                 return this
             },
-            updateSellerOrderAttributes(attributes: SellerOrderAttributesBuilder): PayloadBuilder {
+            updateSellerOrderAttributes(attributes: ChargeSellerOrderAttributesBuilder): ChargePayloadBuilder {
                 payload.sellerOrderAttributes = attributes.getAttributes()
                 return this
             },

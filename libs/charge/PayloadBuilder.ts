@@ -1,17 +1,15 @@
 import { interfaces } from 'ask-sdk-model';
 import ChargeAmazonPayRequest = interfaces.amazonpay.request.ChargeAmazonPayRequest;
 import PaymentAction = interfaces.amazonpay.model.request.PaymentAction;
-import AuthorizeAttributes = interfaces.amazonpay.model.request.AuthorizeAttributes;
-import SellerOrderAttributes = interfaces.amazonpay.model.request.SellerOrderAttributes;
-import {SellerOrderAttributesBuilder} from "./SellerOrderAttributesBuilder";
-import {AuthorizeAttributesBuilder } from './AuthorizeAttributesBuilder'
+import {ChargeSellerOrderAttributesBuilder} from "./SellerOrderAttributesBuilder";
+import {ChargeAuthorizeAttributesBuilder } from './AuthorizeAttributesBuilder'
 
-export interface PayloadBuilder {
-    updateVersion(version: number): PayloadBuilder
-    setSellerId(sellerId: string): PayloadBuilder
-    setBillingAgreementId(billingAgreementId: string): PayloadBuilder
-    updatePaymentAction(action: PaymentAction): PayloadBuilder
-    updateAuthorizeAttributes(attributes: AuthorizeAttributesBuilder): PayloadBuilder
-    updateSellerOrderAttributes(attributes: SellerOrderAttributesBuilder): PayloadBuilder
+export interface ChargePayloadBuilder {
+    updateVersion(version: number): ChargePayloadBuilder
+    setSellerId(sellerId: string): ChargePayloadBuilder
+    setBillingAgreementId(billingAgreementId: string): ChargePayloadBuilder
+    updatePaymentAction(action: PaymentAction): ChargePayloadBuilder
+    updateAuthorizeAttributes(attributes: ChargeAuthorizeAttributesBuilder): ChargePayloadBuilder
+    updateSellerOrderAttributes(attributes: ChargeSellerOrderAttributesBuilder): ChargePayloadBuilder
     getPayload(): ChargeAmazonPayRequest
 }

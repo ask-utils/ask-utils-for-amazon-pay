@@ -1,11 +1,11 @@
-import { PayloadFactory } from '../../libs/charge/PayloadFactory';
-import { AuthorizeAttributesFactory } from '../../libs/charge/AuthorizeAttributesFactory';
-import { SellerOrderAttributesFactory } from '../../libs/charge/SellerOrderAttributesFactory';
+import { ChargePayloadFactory } from '../../libs/charge/PayloadFactory';
+import { ChargeAuthorizeAttributesFactory } from '../../libs/charge/AuthorizeAttributesFactory';
+import { ChargeSellerOrderAttributesFactory } from '../../libs/charge/SellerOrderAttributesFactory';
 
-describe('Charge/PayloadFactory', () => {
-    let PayloadBuilder = PayloadFactory.init()
+describe('Charge/ChargePayloadFactory', () => {
+    let PayloadBuilder = ChargePayloadFactory.init()
     beforeEach(() => {
-        PayloadBuilder = PayloadFactory.init()
+        PayloadBuilder = ChargePayloadFactory.init()
     })
     describe('Exceptions', () => {
         test('should throw error if authorizationAmount.amount does not updated', () => {
@@ -15,11 +15,11 @@ describe('Charge/PayloadFactory', () => {
         })
     })
     describe('Integrations', () => {
-        let AuthorizeAttributesBuilder = AuthorizeAttributesFactory.init()
-        let SellerOrderAttributesBuilder = SellerOrderAttributesFactory.init()
+        let AuthorizeAttributesBuilder = ChargeAuthorizeAttributesFactory.init()
+        let SellerOrderAttributesBuilder = ChargeSellerOrderAttributesFactory.init()
         beforeEach(() => {
-            AuthorizeAttributesBuilder = AuthorizeAttributesFactory.init()
-            SellerOrderAttributesBuilder = SellerOrderAttributesFactory.init()
+            AuthorizeAttributesBuilder = ChargeAuthorizeAttributesFactory.init()
+            SellerOrderAttributesBuilder = ChargeSellerOrderAttributesFactory.init()
         })
         test('should build valid payload object', () => {
             const authorizeAttributes = AuthorizeAttributesBuilder

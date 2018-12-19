@@ -1,9 +1,9 @@
-import { SellerOrderAttributesFactory } from '../../libs/charge/SellerOrderAttributesFactory';
+import { ChargeSellerOrderAttributesFactory } from '../../libs/charge/SellerOrderAttributesFactory';
 
-describe('Charge/SellerOrderAttributesFactory', () => {
-    let SellerOrderAttributesBuilder = SellerOrderAttributesFactory.init()
+describe('Charge/ChargeSellerOrderAttributesFactory', () => {
+    let SellerOrderAttributesBuilder = ChargeSellerOrderAttributesFactory.init()
     beforeEach(() => {
-        SellerOrderAttributesBuilder = SellerOrderAttributesFactory.init()
+        SellerOrderAttributesBuilder = ChargeSellerOrderAttributesFactory.init()
     })
     test('get Default value', () => {
         expect(SellerOrderAttributesBuilder.getAttributes())

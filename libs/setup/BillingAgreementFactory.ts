@@ -2,45 +2,45 @@ import { interfaces } from 'ask-sdk-model';
 import BillingAgreementAttributes = interfaces.amazonpay.model.request.BillingAgreementAttributes;
 import SellerBillingAgreementAttributes = interfaces.amazonpay.model.request.SellerBillingAgreementAttributes;
 
-import {BillingAgreementBuilder} from './BillingAgreementBuilder'
+import {SetupBillingAgreementBuilder} from './BillingAgreementBuilder'
 
 // default
 import {defaultSellerBillingAgreementAttributes, defaultBillingAgreementAttributes } from './defaultAttributes'
 
-export class BillingAgreementFactory {
-    public static init(): BillingAgreementBuilder {
+export class SetupBillingAgreementFactory {
+    public static init(): SetupBillingAgreementBuilder {
         const sellerAgreement: SellerBillingAgreementAttributes = JSON.parse(JSON.stringify(defaultSellerBillingAgreementAttributes))
         const billingAgreement: BillingAgreementAttributes = JSON.parse(JSON.stringify(defaultBillingAgreementAttributes))
         return {
-            setPlatFormId(platFormId: string): BillingAgreementBuilder {
+            setPlatFormId(platFormId: string): SetupBillingAgreementBuilder {
                 billingAgreement.platformId = platFormId
                 return this
             },
-            setSellerNote(sellerNote: string): BillingAgreementBuilder {
+            setSellerNote(sellerNote: string): SetupBillingAgreementBuilder {
                 billingAgreement.sellerNote = sellerNote
                 return this
             },
-            setSellerBillingAgreementAttributes(sellerBillingAgreementAttributes: SellerBillingAgreementAttributes): BillingAgreementBuilder {
+            setSellerBillingAgreementAttributes(sellerBillingAgreementAttributes: SellerBillingAgreementAttributes): SetupBillingAgreementBuilder {
                 billingAgreement.sellerBillingAgreementAttributes = sellerBillingAgreementAttributes
                 return this
             },
-            setSellerBillingAgreementId(sellerBillingAgreementId: string): BillingAgreementBuilder {
+            setSellerBillingAgreementId(sellerBillingAgreementId: string): SetupBillingAgreementBuilder {
                 sellerAgreement.sellerBillingAgreementId = sellerBillingAgreementId
                 return this
             },
-            setStoreName(storeName: string): BillingAgreementBuilder {
+            setStoreName(storeName: string): SetupBillingAgreementBuilder {
                 sellerAgreement.storeName = storeName
                 return this
             },
-            setCustomInformation(information: string): BillingAgreementBuilder {
+            setCustomInformation(information: string): SetupBillingAgreementBuilder {
                 sellerAgreement.customInformation = information
                 return this
             },
-            updateSellerBillingAgreementVersion(version: string): BillingAgreementBuilder {
+            updateSellerBillingAgreementVersion(version: string): SetupBillingAgreementBuilder {
                 sellerAgreement['@version'] = version
                 return this
             },
-            updateVersion(version: string): BillingAgreementBuilder {
+            updateVersion(version: string): SetupBillingAgreementBuilder {
                 billingAgreement['@version'] = version
                 return this
             },

@@ -19,3 +19,10 @@ $ cat handler.js
 
 # The file is example code to call the setup api and the charge api
 ```
+
+## Use typescript
+
+```bash
+$ npm run build
+$ node ./dist/typescript.js
+```

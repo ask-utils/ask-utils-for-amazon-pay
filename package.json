@@ -1,25 +1,18 @@
 {
   "name": "ask-utils-for-amazon-pay",
-  "version": "0.0.3",
+  "version": "0.1.1",
   "description": "Utility libs for the Alexa skill to integrate the Amazon Pay APIs",
-  "main": "index.js",
+  "main": "dist/index.js",
   "scripts": {
     "build": "tsc",
     "test": "jest",
     "test:watch": "jest --watch"
   },
-  "keywords": [
-    "alexa",
-    "ask-sdk",
-    "alexa-skill",
-    "amazon-pay",
-    "ask-utils"
-  ],
+  "keywords": [],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ask-utils/ask-utils-for-amazon-pay.git"
   },
-  "keywords": [],
   "author": "Hidetaka Okamoto <info@wp-kyoto.net> (https://wp-kyoto.net)",
   "license": "MIT",
   "bugs": {
@@ -28,6 +21,7 @@
   "homepage": "https://github.com/ask-utils/ask-utils-for-amazon-pay#readme",
   "devDependencies": {
     "@types/jest": "^23.3.10",
+    "@types/node": "^10.12.17",
     "ask-sdk-model": "^1.10.1",
     "jest": "^23.6.0",
     "ts-jest": "^23.10.5",

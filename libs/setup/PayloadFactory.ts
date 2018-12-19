@@ -2,47 +2,47 @@ import { interfaces } from 'ask-sdk-model';
 import BillingAgreementAttributes = interfaces.amazonpay.model.request.BillingAgreementAttributes;
 import SetupAmazonPayRequest = interfaces.amazonpay.request.SetupAmazonPayRequest
 
-import {BillingAgreementBuilder} from './BillingAgreementBuilder'
-import {PayloadBuilder} from "./PayloadBuilder";
+import {SetupBillingAgreementBuilder} from './BillingAgreementBuilder'
+import {SetupPayloadBuilder} from "./PayloadBuilder";
 import {defaultSetupAmazonPayRequest } from './defaultAttributes'
 
-export class PayloadFactory {
-    public static init(): PayloadBuilder {
+export class SetupPayloadFactory {
+    public static init(): SetupPayloadBuilder {
         const payload: SetupAmazonPayRequest = JSON.parse(JSON.stringify(defaultSetupAmazonPayRequest))
         return {
-            setSellerId(sellerId: string): PayloadBuilder {
+            setSellerId(sellerId: string): SetupPayloadBuilder {
                 payload.sellerId = sellerId
                 return this
             },
-            setCountryOfEstablishment(countryOfEstablishment: string): PayloadBuilder {
+            setCountryOfEstablishment(countryOfEstablishment: string): SetupPayloadBuilder {
                 payload.countryOfEstablishment = countryOfEstablishment
                 return this
             },
-            setLedgerCurrency(ledgerCurrency: string): PayloadBuilder {
+            setLedgerCurrency(ledgerCurrency: string): SetupPayloadBuilder {
                 payload.ledgerCurrency = ledgerCurrency
                 return this
             },
-            setCheckoutLanguage(checkoutLanguage: string): PayloadBuilder {
+            setCheckoutLanguage(checkoutLanguage: string): SetupPayloadBuilder {
                 payload.checkoutLanguage = checkoutLanguage
                 return this
             },
-            withAmazonShippingAddress(isNeedAmazonShippingAddress: boolean): PayloadBuilder {
+            withAmazonShippingAddress(isNeedAmazonShippingAddress: boolean): SetupPayloadBuilder {
                 payload.needAmazonShippingAddress = isNeedAmazonShippingAddress
                 return this
             },
-            isSandboxMode(isSandbox: boolean): PayloadBuilder {
+            isSandboxMode(isSandbox: boolean): SetupPayloadBuilder {
                 payload.sandboxMode = isSandbox
                 return this
             },
-            setSandboxCustomerEmailId(emailId: string): PayloadBuilder {
+            setSandboxCustomerEmailId(emailId: string): SetupPayloadBuilder {
                 payload.sandboxCustomerEmailId = emailId
                 return this
             },
-            updateVersion(version: string):PayloadBuilder {
+            updateVersion(version: string): SetupPayloadBuilder {
                 payload["@version"] = version
                 return this
             },
-            updateBillingAgreement(billingAgreement: BillingAgreementBuilder): PayloadBuilder {
+            updateBillingAgreement(billingAgreement: SetupBillingAgreementBuilder): SetupPayloadBuilder {
                 payload.billingAgreementAttributes = billingAgreement.getAttributes()
                 return this
             },

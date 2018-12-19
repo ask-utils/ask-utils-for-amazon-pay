@@ -1,10 +1,10 @@
-import { BillingAgreementFactory } from '../../libs/setup/BillingAgreementFactory';
-import { PayloadFactory } from "../../libs/setup/PayloadFactory";
+import { SetupBillingAgreementFactory } from '../../libs/setup/BillingAgreementFactory';
+import { SetupPayloadFactory } from "../../libs/setup/PayloadFactory";
 
 describe('Setup/PayloadFactory', () => {
-    let PayloadBuilder = PayloadFactory.init()
+    let PayloadBuilder = SetupPayloadFactory.init()
     beforeEach(() => {
-        PayloadBuilder = PayloadFactory.init()
+        PayloadBuilder = SetupPayloadFactory.init()
     })
     describe('Exception', () => {
         test('should throw error when countryOfEstablishment is undefined', () => {
@@ -40,7 +40,7 @@ describe('Setup/PayloadFactory', () => {
             })
     })
     test('get Full attributes', () => {
-        const SellerOrderAttributesBuilder = BillingAgreementFactory.init()
+        const SellerOrderAttributesBuilder = SetupBillingAgreementFactory.init()
         SellerOrderAttributesBuilder.setPlatFormId('My id')
         SellerOrderAttributesBuilder.setSellerNote('my note')
         SellerOrderAttributesBuilder.setSellerBillingAgreementId('agreement id')

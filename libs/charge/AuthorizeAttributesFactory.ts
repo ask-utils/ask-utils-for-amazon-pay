@@ -2,41 +2,41 @@ import { interfaces } from 'ask-sdk-model';
 import AuthorizeAttributes = interfaces.amazonpay.model.request.AuthorizeAttributes;
 import Price = interfaces.amazonpay.model.request.Price;
 
-import { AuthorizeAttributesBuilder } from './AuthorizeAttributesBuilder'
+import { ChargeAuthorizeAttributesBuilder } from './AuthorizeAttributesBuilder'
 import { defaultAuthorizeAttributes } from './defaultAttributes'
-export class AuthorizeAttributesFactory {
-    public static init(): AuthorizeAttributesBuilder {
+export class ChargeAuthorizeAttributesFactory {
+    public static init(): ChargeAuthorizeAttributesBuilder {
         const attributes: AuthorizeAttributes = JSON.parse(JSON.stringify(defaultAuthorizeAttributes))
         return {
-            setReferenceId(referenceId: string): AuthorizeAttributesBuilder {
+            setReferenceId(referenceId: string): ChargeAuthorizeAttributesBuilder {
                 attributes.authorizationReferenceId = referenceId
                 return this
             },
-            setTransactionTimeout(time: number): AuthorizeAttributesBuilder {
+            setTransactionTimeout(time: number): ChargeAuthorizeAttributesBuilder {
                 attributes.transactionTimeout = time
                 return this
             },
-            setAuthorizationNote(note: string): AuthorizeAttributesBuilder {
+            setAuthorizationNote(note: string): ChargeAuthorizeAttributesBuilder {
                 attributes.sellerAuthorizationNote = note
                 return this
             },
-            updateAmountVersion(version: string): AuthorizeAttributesBuilder {
+            updateAmountVersion(version: string): ChargeAuthorizeAttributesBuilder {
                 attributes.authorizationAmount['@version'] = version
                 return this
             },
-            setAmount(amount: string): AuthorizeAttributesBuilder {
+            setAmount(amount: string): ChargeAuthorizeAttributesBuilder {
                 attributes.authorizationAmount.amount = amount
                 return this
             },
-            setCurrencyCode(currencyCode: string): AuthorizeAttributesBuilder {
+            setCurrencyCode(currencyCode: string): ChargeAuthorizeAttributesBuilder {
                 attributes.authorizationAmount.currencyCode = currencyCode
                 return this
             },
-            setSoftDescriptor(softDescriptor: string): AuthorizeAttributesBuilder {
+            setSoftDescriptor(softDescriptor: string): ChargeAuthorizeAttributesBuilder {
                 attributes.softDescriptor = softDescriptor
                 return this
             },
-            updateVersion(version: string): AuthorizeAttributesBuilder {
+            updateVersion(version: string): ChargeAuthorizeAttributesBuilder {
                 attributes['@version'] = version
                 return this
             },
