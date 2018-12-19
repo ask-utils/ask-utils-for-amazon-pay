@@ -1,4 +1,4 @@
-import { SellerOrderAttributesFactory } from '../libs/SellerOrderAttributesFactory';
+import { SellerOrderAttributesFactory } from '../../libs/charge/SellerOrderAttributesFactory';
 
 describe('SellerOrderAttributesFactory', () => {
     let SellerOrderAttributesBuilder = SellerOrderAttributesFactory.init()

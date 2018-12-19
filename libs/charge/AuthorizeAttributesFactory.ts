@@ -1,71 +1,62 @@
-import { AuthorizeAttributesBuilder } from './AuthorizeAttributesBuilder'
 import { interfaces } from 'ask-sdk-model';
 import AuthorizeAttributes = interfaces.amazonpay.model.request.AuthorizeAttributes;
 import Price = interfaces.amazonpay.model.request.Price;
 
+import { AuthorizeAttributesBuilder } from './AuthorizeAttributesBuilder'
+import { defaultAuthorizeAttributes } from './defaultAttributes'
 export class AuthorizeAttributesFactory {
     public static init(): AuthorizeAttributesBuilder {
-        const payload: AuthorizeAttributes = {
-            '@type': 'AuthorizeAttributes',
-            '@version': '2',
-            'authorizationReferenceId': 'dummy',
-            'authorizationAmount': {
-                '@type': "Price",
-                "@version": "2",
-                'amount': 'dummy',
-                'currencyCode': 'dummy'
-            }
-        }
+        const attributes: AuthorizeAttributes = defaultAuthorizeAttributes
         return {
             setReferenceId(referenceId: string): AuthorizeAttributesBuilder {
-                payload.authorizationReferenceId = referenceId
+                attributes.authorizationReferenceId = referenceId
                 return this
             },
             setTransactionTimeout(time: number): AuthorizeAttributesBuilder {
-                payload.transactionTimeout = time
+                attributes.transactionTimeout = time
                 return this
             },
             setAuthorizationNote(note: string): AuthorizeAttributesBuilder {
-                payload.sellerAuthorizationNote = note
+                attributes.sellerAuthorizationNote = note
                 return this
             },
             updateAmountVersion(version: string): AuthorizeAttributesBuilder {
-                payload.authorizationAmount['@version'] = version
+                attributes.authorizationAmount['@version'] = version
                 return this
             },
             setAmount(amount: string): AuthorizeAttributesBuilder {
-                payload.authorizationAmount.amount = amount
+                attributes.authorizationAmount.amount = amount
                 return this
             },
             setCurrencyCode(currencyCode: string): AuthorizeAttributesBuilder {
-                payload.authorizationAmount.currencyCode = currencyCode
+                attributes.authorizationAmount.currencyCode = currencyCode
                 return this
             },
             setSoftDescriptor(softDescriptor: string): AuthorizeAttributesBuilder {
-                payload.softDescriptor = softDescriptor
+                attributes.softDescriptor = softDescriptor
                 return this
             },
             updateVersion(version: string): AuthorizeAttributesBuilder {
-                payload['@version'] = version
+                attributes['@version'] = version
                 return this
             },
             getAuthorizationAmount(): Price {
-                if (payload.authorizationAmount.amount === 'dummy'){
+                if (attributes.authorizationAmount.amount === 'dummy'){
                     throw new Error('authorizationAmount.amount should be updated')
-                } else if (payload.authorizationAmount.currencyCode === 'dummy') {
+                } else if (attributes.authorizationAmount.currencyCode === 'dummy') {
                     throw new Error('authorizationAmount.currencyCode should be updated')
                 }
-                return payload.authorizationAmount
+                return attributes.authorizationAmount
             },
             getAttributes(): AuthorizeAttributes {
-                if (payload.authorizationReferenceId === 'dummy') {
-                    throw new Error('payload.authorizationReferenceId should be updated')
-                } else if (payload.authorizationAmount.amount === 'dummy'){
+                if (attributes.authorizationReferenceId === 'dummy') {
+                    throw new Error('attributes.authorizationReferenceId should be updated')
+                } else if (attributes.authorizationAmount.amount === 'dummy'){
                     throw new Error('authorizationAmount.amount should be updated')
-                } else if (payload.authorizationAmount.currencyCode === 'dummy') {
+                } else if (attributes.authorizationAmount.currencyCode === 'dummy') {
                     throw new Error('authorizationAmount.currencyCode should be updated')
                 }
-                return payload
+                return attributes
             },
         }
     }
