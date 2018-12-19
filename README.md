@@ -6,6 +6,15 @@
 $ git clone git@github.com:ask-utils/ask-utils-for-amazon-pay.git
 $ cd ask-utils-for-amazon-pay
 $ yarn install
+$ yarn run build
+```
+
+## Example
+
+```javascript
+const { SellerOrderAttributesBuilder } = require('./index')
+console.log(SellerOrderAttributesBuilder.getAttributes())
+{ '@type': 'SellerOrderAttributes', '@version': '2' }
 ```
 
 ## Testing
