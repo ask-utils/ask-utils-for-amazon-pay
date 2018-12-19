@@ -1,7 +1,7 @@
 {
   "name": "ask-utils-for-amazon-pay",
-  "version": "0.0.1",
-  "description": "",
+  "version": "0.0.2",
+  "description": "Utility libs for the Alexa skill to integrate the Amazon Pay APIs",
   "main": "index.js",
   "scripts": {
     "build": "tsc",
