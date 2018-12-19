@@ -13,7 +13,52 @@ $ yarn run build
 
 ### Setup API
 
-WIP
+```javascript
+const AMAZONPay = require('./index')
+const SellerOrderAttributesBuilder = AMAZONPay.Setup.BillingAgreementBuilder
+SellerOrderAttributesBuilder.setPlatFormId('My id')
+SellerOrderAttributesBuilder.setSellerNote('my note')
+SellerOrderAttributesBuilder.setSellerBillingAgreementId('agreement id')
+SellerOrderAttributesBuilder.setSellerNote('My store')
+SellerOrderAttributesBuilder.setCustomInformation('custom info')
+const setupPayload = AMAZONPay.Setup.PayloadBuilder
+
+setupPayload.setSellerId('my seller id')
+setupPayload.setCountryOfEstablishment('country')
+setupPayload.setLedgerCurrency('ledger currency')
+setupPayload.setCheckoutLanguage('checkout lang')
+setupPayload.withAmazonShippingAddress(true)
+setupPayload.isSandboxMode(true)
+setupPayload.setSandboxCustomerEmailId('email')
+setupPayload.updateBillingAgreement(SellerOrderAttributesBuilder)
+const payload = setupPayload.getPayload()
+console.log(JSON.stringify(payload))
+
+
+{
+  "@type": "SetupAmazonPayRequest",
+  "@version": "v2",
+  "sellerId": "my seller id",
+  "countryOfEstablishment": "country",
+  "ledgerCurrency": "ledger currency",
+  "checkoutLanguage": "checkout lang",
+  "needAmazonShippingAddress": true,
+  "sandboxMode": true,
+  "sandboxCustomerEmailId": "email",
+  "billingAgreementAttributes": {
+    "@type": "BillingAgreementAttributes",
+    "@version": "2",
+    "platformId": "My id",
+    "sellerNote": "My store",
+    "sellerBillingAgreementAttributes": {
+      "@type": "SellerBillingAgreementAttributes",
+      "@version": "2",
+      "sellerBillingAgreementId": "agreement id",
+      "customInformation": "custom info"
+    }
+  }
+}
+```
 
 ### Charge API
 
