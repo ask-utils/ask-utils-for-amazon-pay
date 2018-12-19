@@ -14,7 +14,7 @@ $ npm i -D ask-utils-for-amazon-pay
 ### Setup API
 
 ```javascript
-const AMAZONPay = require('./index')
+const AMAZONPay = require('ask-utils-for-amazon-pay')
 const SellerOrderAttributes = AMAZONPay.Setup.BillingAgreementBuilder
   .setPlatFormId('My id')
   .setSellerNote('my note')
@@ -62,7 +62,7 @@ console.log(JSON.stringify(payload))
 ### Charge API
 
 ```javascript
-const AMAZONPay = require('./index')
+const AMAZONPay = require('ask-utils-for-amazon-pay')
 
 const authorizeAttributes = AMAZONPay.Charge.AuthorizeAttributesBuilder
   .setReferenceId('MyReference ID')
