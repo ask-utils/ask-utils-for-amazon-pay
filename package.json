@@ -21,6 +21,7 @@
   "homepage": "https://github.com/ask-utils/ask-utils-for-amazon-pay#readme",
   "devDependencies": {
     "@types/jest": "^23.3.10",
+    "ask-sdk-model": "^1.10.1",
     "jest": "^23.6.0",
     "ts-jest": "^23.10.5",
     "typescript": "^3.2.2"
