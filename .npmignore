@@ -10,3 +10,6 @@ examples/
 libs/
 dev.js
 .idea/
+tsconfig.json
+README.md
+yarn.lock

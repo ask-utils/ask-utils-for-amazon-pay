@@ -3,10 +3,10 @@
 ## Getting Started
 
 ```bash
-$ git clone git@github.com:ask-utils/ask-utils-for-amazon-pay.git
-$ cd ask-utils-for-amazon-pay
-$ yarn install
-$ yarn run build
+$ npm i -S ask-utils-for-amazon-pay
+
+// If you using typescript
+$ npm i -D ask-utils-for-amazon-pay
 ```
 
 ## Example
@@ -15,22 +15,21 @@ $ yarn run build
 
 ```javascript
 const AMAZONPay = require('./index')
-const SellerOrderAttributesBuilder = AMAZONPay.Setup.BillingAgreementBuilder
-SellerOrderAttributesBuilder.setPlatFormId('My id')
-SellerOrderAttributesBuilder.setSellerNote('my note')
-SellerOrderAttributesBuilder.setSellerBillingAgreementId('agreement id')
-SellerOrderAttributesBuilder.setSellerNote('My store')
-SellerOrderAttributesBuilder.setCustomInformation('custom info')
+const SellerOrderAttributes = AMAZONPay.Setup.BillingAgreementBuilder
+  .setPlatFormId('My id')
+  .setSellerNote('my note')
+  .setSellerBillingAgreementId('agreement id')
+  .setSellerNote('My store')
+  .setCustomInformation('custom info')
 const setupPayload = AMAZONPay.Setup.PayloadBuilder
-
-setupPayload.setSellerId('my seller id')
-setupPayload.setCountryOfEstablishment('country')
-setupPayload.setLedgerCurrency('ledger currency')
-setupPayload.setCheckoutLanguage('checkout lang')
-setupPayload.withAmazonShippingAddress(true)
-setupPayload.isSandboxMode(true)
-setupPayload.setSandboxCustomerEmailId('email')
-setupPayload.updateBillingAgreement(SellerOrderAttributesBuilder)
+  .setSellerId('my seller id')
+  .setCountryOfEstablishment('country')
+  .setLedgerCurrency('ledger currency')
+  .setCheckoutLanguage('checkout lang')
+  .withAmazonShippingAddress(true)
+  .isSandboxMode(true)
+  .setSandboxCustomerEmailId('email')
+  .updateBillingAgreement(SellerOrderAttributes)
 const payload = setupPayload.getPayload()
 console.log(JSON.stringify(payload))
 
@@ -119,6 +118,17 @@ $ yarn test -- --watch
 
 
 ## Contributing
+
+### Getting started
+
+```bash
+$ git clone git@github.com:ask-utils/ask-utils-for-amazon-pay.git
+$ cd ask-utils-for-amazon-pay
+$ yarn install
+$ yarn run build
+```
+
+### Before making a Pull Request
 
 ```bash
 $ git checkout -b YOUR_TOPIC_BRANCH

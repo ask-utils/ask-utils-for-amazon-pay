@@ -9,10 +9,8 @@
   "keywords": [],
   "author": "Hidetaka Okamoto <info@wp-kyoto.net> (https://wp-kyoto.net)",
   "license": "MIT",
-  "devDependencies": {
-    "ask-utils-for-amazon-pay": "0.0.1"
-  },
   "dependencies": {
+    "ask-utils-for-amazon-pay": "0.0.1",
     "ask-sdk": "^2.3.0",
     "ask-sdk-core": "^2.3.0",
     "ask-utils": "^0.15.0"
