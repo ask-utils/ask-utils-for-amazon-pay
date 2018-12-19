@@ -1,6 +1,6 @@
 import { AuthorizeAttributesFactory } from '../../libs/charge/AuthorizeAttributesFactory';
 
-describe('AuthorizeAttributesFactory', () => {
+describe('Charge/AuthorizeAttributesFactory', () => {
     let AuthorizeAttributesBuilder = AuthorizeAttributesFactory.init()
     beforeEach(() => {
         AuthorizeAttributesBuilder = AuthorizeAttributesFactory.init()
@@ -20,12 +20,13 @@ describe('AuthorizeAttributesFactory', () => {
                 });
         })
         test('should throw error if authorizationAmount.amount does not updated', () => {
+            AuthorizeAttributesBuilder.setReferenceId('referenceId')
             expect(() => {
                 AuthorizeAttributesBuilder.setReferenceId('referenceId')
                 AuthorizeAttributesBuilder.getAuthorizationAmount()
             }).toThrow('authorizationAmount.amount should be updated')
         })
-        test('should throw error if authorizationAmount.amount does not updated', () => {
+        test('should throw error if authorizationAmount.currencyCode does not updated', () => {
             expect(() => {
                 AuthorizeAttributesBuilder.setReferenceId('referenceId')
                 AuthorizeAttributesBuilder.setAmount('1000')
@@ -58,7 +59,7 @@ describe('AuthorizeAttributesFactory', () => {
                 });
         })
         test('should throw error if authorizationReferenceId does not updated', () => {
-            expect(() => AuthorizeAttributesBuilder.getAttributes()).toThrow('payload.authorizationReferenceId should be updated')
+            expect(() => AuthorizeAttributesBuilder.getAttributes()).toThrow('attributes.authorizationReferenceId should be updated')
         })
         test('should throw error if authorizationAmount.amount does not updated', () => {
             expect(() => {
@@ -66,7 +67,7 @@ describe('AuthorizeAttributesFactory', () => {
                 AuthorizeAttributesBuilder.getAttributes()
             }).toThrow('authorizationAmount.amount should be updated')
         })
-        test('should throw error if authorizationAmount.amount does not updated', () => {
+        test('should throw error if authorizationAmount.currencyCode does not updated', () => {
             expect(() => {
                 AuthorizeAttributesBuilder.setReferenceId('referenceId')
                 AuthorizeAttributesBuilder.setAmount('1000')

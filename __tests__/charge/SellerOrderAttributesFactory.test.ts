@@ -1,6 +1,6 @@
 import { SellerOrderAttributesFactory } from '../../libs/charge/SellerOrderAttributesFactory';
 
-describe('SellerOrderAttributesFactory', () => {
+describe('Charge/SellerOrderAttributesFactory', () => {
     let SellerOrderAttributesBuilder = SellerOrderAttributesFactory.init()
     beforeEach(() => {
         SellerOrderAttributesBuilder = SellerOrderAttributesFactory.init()
@@ -25,19 +25,4 @@ describe('SellerOrderAttributesFactory', () => {
                 '@version': '2'
             })
     })
-    /*
-    test('Should get authorizationAmount object', () => {
-        SellerOrderAttributesBuilder.setReferenceId('referenceId')
-        SellerOrderAttributesBuilder.setTransactionTimeout(100)
-        SellerOrderAttributesBuilder.setAmount('1000')
-        SellerOrderAttributesBuilder.setCurrencyCode('USD')
-        expect(SellerOrderAttributesBuilder.getAuthorizationAmount())
-            .toEqual({
-                "@type": "Price",
-                "@version": "2",
-                "amount": "1000",
-                "currencyCode": "USD"
-            });
-    })
-    */
 })

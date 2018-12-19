@@ -11,7 +11,7 @@ import { SellerOrderAttributesBuilder } from './SellerOrderAttributesBuilder'
 
 export class PayloadFactory {
     public static init(): PayloadBuilder {
-        const payload: ChargeAmazonPayRequest = defaultPayload
+        const payload: ChargeAmazonPayRequest = JSON.parse(JSON.stringify(defaultPayload))
         return {
             updateVersion(version: number): PayloadBuilder {
                 payload["@version"] = String(version)

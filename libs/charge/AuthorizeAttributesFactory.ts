@@ -6,7 +6,7 @@ import { AuthorizeAttributesBuilder } from './AuthorizeAttributesBuilder'
 import { defaultAuthorizeAttributes } from './defaultAttributes'
 export class AuthorizeAttributesFactory {
     public static init(): AuthorizeAttributesBuilder {
-        const attributes: AuthorizeAttributes = defaultAuthorizeAttributes
+        const attributes: AuthorizeAttributes = JSON.parse(JSON.stringify(defaultAuthorizeAttributes))
         return {
             setReferenceId(referenceId: string): AuthorizeAttributesBuilder {
                 attributes.authorizationReferenceId = referenceId
