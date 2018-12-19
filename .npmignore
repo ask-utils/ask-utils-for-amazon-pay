@@ -1,0 +1,12 @@
+__tests__/
+docs/
+.eslint*
+.gitignore
+.travis.yml
+node_modules/
+.DS_Store
+.envrc
+examples/
+libs/
+dev.js
+.idea/

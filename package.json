@@ -1,6 +1,6 @@
 {
   "name": "ask-utils-for-amazon-pay",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -8,13 +8,20 @@
     "test": "jest",
     "test:watch": "jest --watch"
   },
+  "keywords": [
+    "alexa",
+    "ask-sdk",
+    "alexa-skill",
+    "amazon-pay",
+    "ask-utils"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ask-utils/ask-utils-for-amazon-pay.git"
   },
   "keywords": [],
   "author": "Hidetaka Okamoto <info@wp-kyoto.net> (https://wp-kyoto.net)",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/ask-utils/ask-utils-for-amazon-pay/issues"
   },
