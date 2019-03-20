@@ -1,4 +1,4 @@
-import { SetupBillingAgreementFactory } from '../../libs/setup/BillingAgreementFactory';
+import SetupBillingAgreementFactory from '../../libs/setup/BillingAgreementFactory';
 
 describe('Setup/SetupBillingAgreementFactory', () => {
   let SellerOrderAttributesBuilder = SetupBillingAgreementFactory.init()

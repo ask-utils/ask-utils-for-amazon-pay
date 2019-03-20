@@ -1,53 +1,26 @@
-// silence is golden
-// interfaces
-// - setup
-import { SetupBillingAgreementBuilder } from './setup/BillingAgreementBuilder'
-import { SetupPayloadBuilder } from './setup/PayloadBuilder'
-// - charge
-import { ChargeAuthorizeAttributesBuilder } from './charge/AuthorizeAttributesBuilder'
-import { ChargeSellerOrderAttributesBuilder } from './charge/SellerOrderAttributesBuilder'
-import { ChargePayloadBuilder } from './charge/PayloadBuilder'
-
 // functions
-import { SetupBillingAgreementFactory } from './setup/BillingAgreementFactory'
-import { SetupPayloadFactory } from './setup/PayloadFactory'
-import { ChargeAuthorizeAttributesFactory } from './charge/AuthorizeAttributesFactory'
-import { ChargeSellerOrderAttributesFactory } from './charge/SellerOrderAttributesFactory'
-import { ChargePayloadFactory } from './charge/PayloadFactory'
+import SetupBillingAgreementFactory from './setup/BillingAgreementFactory'
+import SetupPayloadFactory from './setup/PayloadFactory'
+import ChargeAuthorizeAttributesFactory from './charge/AuthorizeAttributesFactory'
+import ChargeSellerOrderAttributesFactory from './charge/SellerOrderAttributesFactory'
+import ChargePayloadFactory from './charge/PayloadFactory'
 
-export declare namespace interfaces {
-    interface Charge {
-        AuthorizeAttributesBuilder: ChargeAuthorizeAttributesBuilder;
-        SellerOrderAttributesBuilder: ChargeSellerOrderAttributesBuilder;
-        PayloadBuilder: ChargePayloadBuilder;
-    }
-    interface Setup {
-        PayloadBuilder: SetupPayloadBuilder;
-        BillingAgreementBuilder: SetupBillingAgreementBuilder;
-    }
+export const Charge = {
+    ChargeAuthorizeAttributesFactory,
+    AuthorizeAttributesBuilder: ChargeAuthorizeAttributesFactory.init(),
+    ChargeSellerOrderAttributesFactory,
+    SellerOrderAttributesBuilder: ChargeSellerOrderAttributesFactory.init(),
+    ChargePayloadFactory,
+    PayloadBuilder: ChargePayloadFactory.init()
+}
+export const Setup = {
+    SetupPayloadFactory,
+    PayloadBuilder: SetupPayloadFactory.init(),
+    SetupBillingAgreementFactory,
+    BillingAgreementBuilder: SetupBillingAgreementFactory.init()
 }
 
-export interface AmazonPay {
-    Charge: {
-        AuthorizeAttributesBuilder: ChargeAuthorizeAttributesBuilder;
-        SellerOrderAttributesBuilder: ChargeSellerOrderAttributesBuilder;
-        PayloadBuilder: ChargePayloadBuilder;
-    }
-    Setup: {
-        PayloadBuilder: SetupPayloadBuilder;
-        BillingAgreementBuilder: SetupBillingAgreementBuilder;
-    }
+export default {
+    Charge,
+    Setup
 }
-const AmazonPay: AmazonPay = {
-    Charge: {
-        AuthorizeAttributesBuilder: ChargeAuthorizeAttributesFactory.init(),
-        SellerOrderAttributesBuilder: ChargeSellerOrderAttributesFactory.init(),
-        PayloadBuilder: ChargePayloadFactory.init()
-    },
-    Setup: {
-        PayloadBuilder: SetupPayloadFactory.init(),
-        BillingAgreementBuilder: SetupBillingAgreementFactory.init()
-    }
-}
-export default AmazonPay
-module.exports = AmazonPay

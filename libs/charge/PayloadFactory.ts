@@ -9,7 +9,7 @@ import { defaultPayload } from './defaultAttributes'
 import { ChargeSellerOrderAttributesBuilder } from './SellerOrderAttributesBuilder'
 
 
-export class ChargePayloadFactory {
+export default class ChargePayloadFactory {
     public static init(): ChargePayloadBuilder {
         const payload: ChargeAmazonPayRequest = JSON.parse(JSON.stringify(defaultPayload))
         return {

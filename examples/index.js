@@ -1,4 +1,4 @@
-const AMAZONPay = require('ask-utils-for-amazon-pay')
+const AMAZONPay = require('../dist/index')
 
 const chargePayloadExample = () => {
   const authorizeAttributes = AMAZONPay.Charge.AuthorizeAttributesBuilder

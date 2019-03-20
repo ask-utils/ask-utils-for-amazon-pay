@@ -1,5 +1,5 @@
-import { SetupBillingAgreementFactory } from '../../libs/setup/BillingAgreementFactory';
-import { SetupPayloadFactory } from "../../libs/setup/PayloadFactory";
+import SetupBillingAgreementFactory from '../../libs/setup/BillingAgreementFactory';
+import SetupPayloadFactory from "../../libs/setup/PayloadFactory";
 
 describe('Setup/PayloadFactory', () => {
     let PayloadBuilder = SetupPayloadFactory.init()

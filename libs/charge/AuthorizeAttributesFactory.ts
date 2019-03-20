@@ -4,7 +4,7 @@ import Price = interfaces.amazonpay.model.request.Price;
 
 import { ChargeAuthorizeAttributesBuilder } from './AuthorizeAttributesBuilder'
 import { defaultAuthorizeAttributes } from './defaultAttributes'
-export class ChargeAuthorizeAttributesFactory {
+export default class ChargeAuthorizeAttributesFactory {
     public static init(): ChargeAuthorizeAttributesBuilder {
         const attributes: AuthorizeAttributes = JSON.parse(JSON.stringify(defaultAuthorizeAttributes))
         return {

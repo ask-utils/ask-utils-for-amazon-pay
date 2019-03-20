@@ -1,6 +1,6 @@
-import { ChargePayloadFactory } from '../../libs/charge/PayloadFactory';
-import { ChargeAuthorizeAttributesFactory } from '../../libs/charge/AuthorizeAttributesFactory';
-import { ChargeSellerOrderAttributesFactory } from '../../libs/charge/SellerOrderAttributesFactory';
+import ChargePayloadFactory from '../../libs/charge/PayloadFactory';
+import ChargeAuthorizeAttributesFactory from '../../libs/charge/AuthorizeAttributesFactory';
+import ChargeSellerOrderAttributesFactory from '../../libs/charge/SellerOrderAttributesFactory';
 
 describe('Charge/ChargePayloadFactory', () => {
     let PayloadBuilder = ChargePayloadFactory.init()

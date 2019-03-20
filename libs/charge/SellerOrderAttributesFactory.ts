@@ -4,7 +4,7 @@ import SellerOrderAttributes = interfaces.amazonpay.model.request.SellerOrderAtt
 import { ChargeSellerOrderAttributesBuilder } from './SellerOrderAttributesBuilder'
 import { defaultSellerOrderAttributes } from './defaultAttributes'
 
-export class ChargeSellerOrderAttributesFactory {
+export default class ChargeSellerOrderAttributesFactory {
     public static init(): ChargeSellerOrderAttributesBuilder {
         const attributes: SellerOrderAttributes  = JSON.parse(JSON.stringify(defaultSellerOrderAttributes))
         return {

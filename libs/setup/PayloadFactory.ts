@@ -1,12 +1,11 @@
 import { interfaces } from 'ask-sdk-model';
-import BillingAgreementAttributes = interfaces.amazonpay.model.request.BillingAgreementAttributes;
 import SetupAmazonPayRequest = interfaces.amazonpay.request.SetupAmazonPayRequest
 
 import {SetupBillingAgreementBuilder} from './BillingAgreementBuilder'
 import {SetupPayloadBuilder} from "./PayloadBuilder";
 import {defaultSetupAmazonPayRequest } from './defaultAttributes'
 
-export class SetupPayloadFactory {
+export default class SetupPayloadFactory {
     public static init(): SetupPayloadBuilder {
         const payload: SetupAmazonPayRequest = JSON.parse(JSON.stringify(defaultSetupAmazonPayRequest))
         return {

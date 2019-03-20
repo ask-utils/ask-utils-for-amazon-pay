@@ -1,4 +1,4 @@
-import AmazonPay from 'ask-utils-for-amazon-pay'
+import AmazonPay from '../dist/index'
 
 const authorizeAttributes = AmazonPay.Charge.AuthorizeAttributesBuilder
     .setReferenceId('MyReference ID')

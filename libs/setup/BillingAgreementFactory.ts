@@ -7,7 +7,7 @@ import {SetupBillingAgreementBuilder} from './BillingAgreementBuilder'
 // default
 import {defaultSellerBillingAgreementAttributes, defaultBillingAgreementAttributes } from './defaultAttributes'
 
-export class SetupBillingAgreementFactory {
+export default class SetupBillingAgreementFactory {
     public static init(): SetupBillingAgreementBuilder {
         const sellerAgreement: SellerBillingAgreementAttributes = JSON.parse(JSON.stringify(defaultSellerBillingAgreementAttributes))
         const billingAgreement: BillingAgreementAttributes = JSON.parse(JSON.stringify(defaultBillingAgreementAttributes))

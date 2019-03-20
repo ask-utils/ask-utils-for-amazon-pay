@@ -1,4 +1,4 @@
-import { ChargeAuthorizeAttributesFactory } from '../../libs/charge/AuthorizeAttributesFactory';
+import ChargeAuthorizeAttributesFactory from '../../libs/charge/AuthorizeAttributesFactory';
 
 describe('Charge/ChargeAuthorizeAttributesFactory', () => {
     let AuthorizeAttributesBuilder = ChargeAuthorizeAttributesFactory.init()

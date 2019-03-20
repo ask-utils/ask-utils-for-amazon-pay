@@ -1,12 +1,12 @@
-# ask-utils-for-amazon-pay
+# @ask-utils/amazon-pay
 
 ## Getting Started
 
 ```bash
-$ npm i -S ask-utils-for-amazon-pay
+$ npm i -S @ask-utils/amazon-pay
 
 // If you using typescript
-$ npm i -D ask-utils-for-amazon-pay
+$ npm i -D @ask-utils/amazon-pay
 ```
 
 ## Example
@@ -14,7 +14,7 @@ $ npm i -D ask-utils-for-amazon-pay
 ### Setup API
 
 ```javascript
-const AMAZONPay = require('ask-utils-for-amazon-pay')
+const AMAZONPay = require('@ask-utils/amazon-pay')
 const SellerOrderAttributes = AMAZONPay.Setup.BillingAgreementBuilder
   .setPlatFormId('My id')
   .setSellerNote('my note')
@@ -62,7 +62,7 @@ console.log(JSON.stringify(payload))
 ### Charge API
 
 ```javascript
-const AMAZONPay = require('ask-utils-for-amazon-pay')
+const AMAZONPay = require('@ask-utils/amazon-pay')
 
 const authorizeAttributes = AMAZONPay.Charge.AuthorizeAttributesBuilder
   .setReferenceId('MyReference ID')
