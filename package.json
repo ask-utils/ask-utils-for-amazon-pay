@@ -1,6 +1,6 @@
 {
   "name": "@ask-utils/amazon-pay",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utility libs for the Alexa skill to integrate the Amazon Pay APIs",
   "main": "dist/index.js",
   "scripts": {
